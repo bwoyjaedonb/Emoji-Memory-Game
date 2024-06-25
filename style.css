@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+  /*container*/
+  .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 60px;
+
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+   
+    
+  }
+
+
+  h2{
+    font-size: 3em;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    
+  }
+  .reset{
+    padding: 15px 20px;
+    color: black;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+
+
+  .reset:hover{
+    color: #fff;
+    background: black;
+  }
+  .game{
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+  }
+
+  .item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: #fff;
+    transition: 0.25s;
+  }
+
+  .item::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(250, 250, 250);
+    /*opacity: 0.85;*/
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+  }
+  .boxMatch:after,
+  .boxOpen:after{
+    transform: rotateY(180deg);
+  }
